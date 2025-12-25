@@ -15,6 +15,7 @@
                 <ul class="nav-links">
                     <li><a href="#home">首页</a></li>
                     <li><a href="#about">关于我</a></li>
+                    <li><a href="#publications">发表文章</a></li>
                     <li><a href="#documents">文档下载</a></li>
                     <li><a href="#contact">联系方式</a></li>
                 </ul>
@@ -25,10 +26,19 @@
         <main>
             <!-- 首页介绍 -->
             <section id="home" class="hero">
+                <div class="hero-background"></div>
                 <div class="hero-content">
-                    <h1 class="hero-title">你好，我是莫天柱</h1>
-                    <p class="hero-subtitle">欢迎来到我的个人网站</p>
-                    <p class="hero-description">很高兴你来到这里，这里是我的学习与分享空间</p>
+                    <div class="profile-section">
+                        <div class="profile-photo">
+                            <img src="images/profile.jpg" alt="莫天柱" id="profile-img" onerror="this.src='images/profile-placeholder.svg'">
+                        </div>
+                        <div class="profile-info">
+                            <h1 class="hero-title">莫天柱</h1>
+                            <p class="hero-subtitle">Tianzhu Mo</p>
+                            <p class="hero-description">研究生 / 研究员</p>
+                            <p class="hero-institution">南京航空航天大学</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -36,18 +46,68 @@
             <section id="about" class="about">
                 <h2 class="section-title">关于我</h2>
                 <div class="about-content">
-                    <p>我是莫天柱，这是我的个人网站。</p>
-                    <p>很高兴你来到这里，你可以在以下的网站找到我：</p>
-                    <div class="social-links">
-                        <a href="https://www.zhihu.com/people/AJLoveChina" target="_blank" class="social-link">
-                            <span class="social-icon">📝</span>
-                            <span>知乎</span>
-                        </a>
-                        <a href="http://hejie.nigeerhuo.com" target="_blank" class="social-link">
-                            <span class="social-icon">📚</span>
-                            <span>我的博客（已经不更新了，现在在知乎写文章）</span>
-                        </a>
+                    <div class="about-text">
+                        <p>欢迎访问我的个人主页。我是莫天柱，目前就读/工作于南京航空航天大学。</p>
+                        <p>我的研究兴趣包括但不限于：</p>
+                        <ul class="research-interests">
+                            <li><strong>高能实验物理</strong>：作为BGOegg国际合作组的成员，正在进行高能区pi0eta束流不对称性测量</li>
+                            <li><strong>中子/X射线成像融合</strong>：利用两种粒子成像原理的互补性，提高成像质量</li>
+                        </ul>
                     </div>
+                    <div class="contact-info">
+                        <h3>联系方式</h3>
+                        <ul class="contact-list">
+                            <li><strong>邮箱：</strong>nuaamtz@nuaa.edu.cn</li>
+                            <li><strong>地址：</strong>江苏省南京市</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://www.zhihu.com/people/AJLoveChina" target="_blank" class="social-link">
+                                <span class="social-icon">📝</span>
+                                <span>知乎</span>
+                            </a>
+                            <a href="http://hejie.nigeerhuo.com" target="_blank" class="social-link">
+                                <span class="social-icon">📚</span>
+                                <span>博客</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 已发表文章 -->
+            <section id="publications" class="publications">
+                <h2 class="section-title">已发表文章</h2>
+                <div class="publications-content">
+                    <!-- <div class="publication-item">
+                        <div class="publication-year">2024</div>
+                        <div class="publication-details">
+                            <h3 class="publication-title">论文标题示例</h3>
+                            <p class="publication-authors">
+                                <strong>莫天柱</strong>, 合作者1, 合作者2
+                            </p>
+                            <p class="publication-venue">期刊/会议名称, 2024</p>
+                            <div class="publication-links">
+                                <a href="#" class="pub-link">PDF</a>
+                                <a href="#" class="pub-link">DOI</a>
+                                <a href="#" class="pub-link">代码</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-year">2023</div>
+                        <div class="publication-details">
+                            <h3 class="publication-title">另一篇论文标题</h3>
+                            <p class="publication-authors">
+                                合作者1, <strong>莫天柱</strong>, 合作者2
+                            </p>
+                            <p class="publication-venue">期刊/会议名称, 2023</p>
+                            <div class="publication-links">
+                                <a href="#" class="pub-link">PDF</a>
+                                <a href="#" class="pub-link">DOI</a>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- 更多文章可以在这里添加 -->
                 </div>
             </section>
 
@@ -55,7 +115,7 @@
             <section id="documents" class="documents">
                 <h2 class="section-title">文档下载</h2>
                 <div class="documents-content">
-                    <div class="upload-info">
+                    <!-- <div class="upload-info">
                         <h3>如何添加文档？</h3>
                         <p>由于这是静态网站，文档需要手动添加到 <code>documents/</code> 目录中。你可以：</p>
                         <ol>
@@ -63,7 +123,7 @@
                             <li>使用 Git 提交并推送到仓库</li>
                             <li>文件会自动出现在下载列表中</li>
                         </ol>
-                    </div>
+                    </div> -->
                     
                     <div class="documents-list">
                         <h3>可下载文档</h3>
@@ -81,8 +141,6 @@
                 <div class="contact-content">
                     <p>如果你有任何问题或建议，欢迎通过以下方式联系我：</p>
                     <div class="contact-links">
-                        <a href="https://www.zhihu.com/people/AJLoveChina" target="_blank" class="contact-link">
-                            知乎私信
                         </a>
                     </div>
                 </div>
