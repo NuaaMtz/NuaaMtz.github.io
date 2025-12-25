@@ -1,5 +1,7 @@
 // 文档列表配置
-const DOCUMENTS_DIR = 'documents/';
+// 使用相对路径，兼容本地和 GitHub Pages
+// 对于用户页面 (username.github.io)，所有路径都从根目录开始
+const DOCUMENTS_DIR = './documents/';
 
 // 文档列表（可以通过手动添加或使用 API 获取）
 // 如果你有文件列表 API，可以在这里调用
@@ -17,7 +19,8 @@ async function loadDocuments() {
     
     try {
         // 尝试从 documents-list.json 加载文件列表
-        const response = await fetch('documents-list.json');
+        // 使用相对路径，兼容本地和 GitHub Pages
+        const response = await fetch('./documents-list.json');
         if (response.ok) {
             const fileList = await response.json();
             displayDocuments(fileList);
@@ -47,10 +50,18 @@ async function scanDocumentsDirectory(container) {
             
             links.forEach(link => {
                 const href = link.getAttribute('href');
-                if (href && !href.endsWith('/') && href !== '../') {
+                if (href && !href.endsWith('/') && href !== '../' && !href.startsWith('http')) {
+                    // 处理相对路径，确保使用正确的路径
+                    let fileUrl = href;
+                    if (!fileUrl.startsWith('/') && !fileUrl.startsWith('./') && !fileUrl.startsWith('../')) {
+                        fileUrl = DOCUMENTS_DIR + href;
+                    } else if (fileUrl.startsWith('/')) {
+                        // 如果是绝对路径，转换为相对路径
+                        fileUrl = '.' + fileUrl;
+                    }
                     files.push({
-                        name: decodeURIComponent(href),
-                        url: DOCUMENTS_DIR + href,
+                        name: decodeURIComponent(href.replace(/^.*\//, '')),
+                        url: fileUrl,
                         size: '未知'
                     });
                 }

@@ -23,18 +23,16 @@ body {
     line-height: 1.8;
     color: var(--text-color);
     background-color: var(--bg-color);
-    background-image: url('images/background.jpg');
+    background-image: url('./images/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
-/* 如果背景图片不存在，使用渐变背景 */
-@supports not (background-image: url('images/background.jpg')) {
-    body {
-        background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
-    }
+/* 如果背景图片不存在，使用渐变背景作为后备 */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
 }
 
 body::before {
@@ -134,7 +132,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/background.jpg');
+    background-image: url('./images/background.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.15;
